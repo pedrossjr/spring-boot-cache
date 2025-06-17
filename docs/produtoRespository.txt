@@ -1,0 +1,48 @@
+package io.github.pedrossjr.cache.repositories;
+
+import io.github.pedrossjr.cache.entities.Produto;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+@Component
+@Slf4j
+@Repository
+public interface ProdutoRepository extends JpaRepository<Produto, String> {
+//    public List<Produto> listAll() {
+//        log.info("c=ProdutoRepository, a=listAll()");
+//
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+//
+//        final Produto produto1 = Produto.builder()
+//                .sku("12345")
+//                .preco(new BigDecimal(9.99))
+//                .descricao("Produto 1")
+//                .build();
+//
+//        final Produto produto2 = Produto.builder()
+//                .sku("67890")
+//                .preco(new BigDecimal(12.99))
+//                .descricao("Produto 2")
+//                .build();
+//
+//        final Produto produto3 = Produto.builder()
+//                .sku("13579")
+//                .preco(new BigDecimal(15.99))
+//                .descricao("Produto 3")
+//                .build();
+//
+//        List<Produto> produtos = List.of(produto1, produto2, produto3);
+//
+//        return produtos;
+//    }
+
+}
