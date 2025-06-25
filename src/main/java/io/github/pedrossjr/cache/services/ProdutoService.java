@@ -56,7 +56,7 @@ public class ProdutoService {
         return produtoRepository.save(produto);
     }
 
-    // Mesmo caso da inclusão porém, na atualização de um produto
+    // Mesmo caso da inclusão porém, na exclusão de um produto
     // @CacheEvict(value = cacheName, key = cacheKey)
     public void delete(String sku) throws ProdutoNotFoundException {
         verifyByExists(sku);
