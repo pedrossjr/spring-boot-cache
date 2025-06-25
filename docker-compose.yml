@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  cache:
+    image: redis:7
+    container_name: redis
+    ports:
+      - '6379:6379'
+
+  postgres:
+    image: postgres:16.9
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: db_cache
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - "/c/docker-volumes/postgres-db:/var/lib/postgresql/db"
+
+  pgadmin:
+    image: dpage/pgadmin4:8.12
+    container_name: pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:

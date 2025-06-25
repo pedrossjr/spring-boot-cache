@@ -2,6 +2,7 @@ package io.github.pedrossjr.cache.controllers;
 
 import io.github.pedrossjr.cache.entities.Produto;
 import io.github.pedrossjr.cache.services.ProdutoService;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,8 +19,9 @@ public class ProdutoController {
     }
 
     @PostMapping("/adicionar")
+    @ResponseStatus(HttpStatus.CREATED)
     public Produto adicionar(@RequestBody Produto produto) {
-        return produtoService.adicionar(produto);
+        return produtoService.add(produto);
     }
 
     @GetMapping("/listar")
@@ -34,7 +36,7 @@ public class ProdutoController {
 
     @PutMapping("{sku}/atualizar")
     public Produto atualizarId(@RequestBody Produto produto) {
-        return produtoService.atualizarId(produto);
+        return produtoService.updateId(produto);
     }
 
 }
