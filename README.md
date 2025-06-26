@@ -29,7 +29,7 @@ aplicação.
 - GitHub
 - Docker Desktop 
 
-### 📚 Cache na Teoria
+### 📚 Cache na teoria
 
 **Definição de cache**
 
