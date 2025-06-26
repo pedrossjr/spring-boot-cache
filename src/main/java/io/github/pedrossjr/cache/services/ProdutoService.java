@@ -3,8 +3,6 @@ package io.github.pedrossjr.cache.services;
 import io.github.pedrossjr.cache.entities.Produto;
 import io.github.pedrossjr.cache.exception.ProdutoNotFoundException;
 import io.github.pedrossjr.cache.repositories.ProdutoRepository;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
