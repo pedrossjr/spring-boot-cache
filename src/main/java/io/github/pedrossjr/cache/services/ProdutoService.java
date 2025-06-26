@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -29,12 +30,14 @@ public class ProdutoService {
     // Se não é utilizado o time para limpeza do cache, é uma boa estratégia para atualizar os dados no cache
     // logo após adicionar um novo registro.
     // @CacheEvict(value = cacheName, key = cacheKey)
+    @Transactional
     public Produto add(Produto produto ) throws ProdutoNotFoundException {
         verifyByExists(produto.getSku());
         return produtoRepository.save(produto);
     }
 
     @Cacheable(value = cacheName, key = cacheKey)
+    @Transactional(readOnly = true)
     public List<Produto> listAll(){
         System.out.println("Se esta linha for impressa, significa que a consulta está sendo realizada no banco de dados.");
         System.out.println("As próximas consultas durantes os próximos 15 segundos serão realizadas no cache do Redis.");
@@ -42,6 +45,7 @@ public class ProdutoService {
     }
 
     @Cacheable(value = cacheName, key = cacheKey)
+    @Transactional(readOnly = true)
     public Optional<Produto> listId(String sku) {
         System.out.println("Se esta linha for impressa, significa que a consulta está sendo realizada no banco de dados.");
         System.out.println("As próximas consultas durantes os próximos 15 segundos serão realizadas no cache do Redis.");
@@ -50,6 +54,7 @@ public class ProdutoService {
 
     // Mesmo caso da inclusão porém, na atualização de um produto
     // @CacheEvict(value = cacheName, key = cacheKey)
+    @Transactional
     public Produto updateId(Produto produto) throws ProdutoNotFoundException {
         verifyByExists(produto.getSku());
         return produtoRepository.save(produto);
@@ -57,6 +62,7 @@ public class ProdutoService {
 
     // Mesmo caso da inclusão porém, na exclusão de um produto
     // @CacheEvict(value = cacheName, key = cacheKey)
+    @Transactional
     public void delete(String sku) throws ProdutoNotFoundException {
         verifyByExists(sku);
         produtoRepository.deleteById(sku);
