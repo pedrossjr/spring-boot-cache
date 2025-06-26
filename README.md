@@ -27,7 +27,7 @@ aplicação.
 - IntelliJ IDEA (Community Edition)
 - Git
 - GitHub
-- Docker Desktop- 
+- Docker Desktop 
 
 ### 📚 Cache na Teoria
 
