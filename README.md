@@ -203,7 +203,8 @@ diretamente do cache, sem executar o método novamente.
 - **@CacheEvict** - Remove entradas do cache. Usado quando o dado muda 
 (inserção, atualização, remoção) e o cache precisa ser invalidado.
 
-### 🙋‍♂️ Dicas e sugestões
+### 🙋‍♂️ Issues e sugestões
 
-Fique à vontade para abrir issues ou enviar pull requests. Sugestões e
-melhorias são sempre bem-vindas!
+Fique à vontade para abrir issues e fazer sugestões ao projeto. Melhorias
+sempre são bem-vindas e meu objetio é compartilhar conhecimento com a
+linguagem Java!
