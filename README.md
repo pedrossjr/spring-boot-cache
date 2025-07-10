@@ -18,13 +18,13 @@ aplicação.
 - Swagger
 - Maven
 - PostgreSQL
-- PgAdmin4
-- Insomnia
 - Docker
 
 ### ⚙️ Ferramentas
 
 - IntelliJ IDEA (Community Edition)
+- PgAdmin4
+- Insomnia
 - Git
 - GitHub
 - Docker Desktop 
